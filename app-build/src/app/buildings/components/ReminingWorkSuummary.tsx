@@ -109,16 +109,20 @@ export const ReminingWorkSuummary = ({
                                 borderBottom: "1px solid #999",
                             }}
                         >
-                            {workerTask.tasks.map((task) => (
-                                <div key={`worker_task-${task.name}-${task.unitId}-${task.unitStepId}`}>
-                                    {task.nameTranslated}(#{task.unitId}-{task.unitStepId})
-                                    {task.currentLv}-&gt;{task.targetLv}/
-                                    {task.cost.cost.map((cost) => (
-                                        `${cost.type}:${cost.value}`
-                                    ))}/
-                                    {task.cost.timeHours}h
-                                </div>
-                            ))}
+                            {workerTask.tasks.map((task) => {
+                                const taskName = `${task.nameTranslated}(#${task.unitId}-${task.unitStepId})`;
+                                const lvFromTo = `Lv${task.currentLv}→${task.targetLv}`;
+                                const cost = task.cost.cost.map((cost) => (
+                                    `${cost.type}: ${formatNumberWithCommas(cost.value)}`
+                                ));
+                                const timeHours = `${task.cost.timeHours}h`;
+
+                                return (
+                                    <div key={`worker_task-${task.name}-${task.unitId}-${task.unitStepId}`}>
+                                        {`${taskName} / ${lvFromTo} / ${cost} / ${timeHours}`}
+                                    </div>
+                                );
+                            })}
                         </div>
                         <div>
                             <strong>合計: {workerTask.workEndTime}h</strong>
@@ -156,4 +160,23 @@ const createTasks = (buildingStatuses: BuildingStatus[]): Task[] => {
         });
     });
     return tasks;
+}
+
+const formatNumberWithCommas = (num: number | string): string => {
+    // 数値型でなければ文字列に変換し、数値でない場合は空文字列を返す
+    if (typeof num !== 'number' && typeof num !== 'string') {
+      return '';
+    }
+    let strNum = String(num); // 数値でも文字列でも、一旦文字列として扱う
+  
+    // 小数点以下の部分を分離
+    const parts = strNum.split('.');
+    let integerPart = parts[0];
+    const decimalPart = parts.length > 1 ? '.' + parts[1] : '';
+  
+    // 整数部分を正規表現で3桁ごとにカンマ区切り
+    // 1桁以上の数字の後に、後ろから3桁ごとの区切り文字 (カンマ) を挿入
+    integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  
+    return integerPart + decimalPart;
 }
