@@ -1,0 +1,32 @@
+
+.building-page > div {
+    margin-left: 30px;
+}
+
+.building-page .table-grid {
+    display: grid;
+    grid-template-columns: 200px 30px 100px 100px;
+}
+
+.header {
+    font-weight: bold;
+    background-color: #ddd;
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.category {
+    font-weight: bold;
+    background-color: #f9f9f9;
+    padding: 6px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: flex-start;
+}
+
+.item {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
