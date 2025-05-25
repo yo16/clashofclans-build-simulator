@@ -104,7 +104,11 @@ export const ReminingWorkSuummary = ({
                         key={`worker-${index}`}
                     >
                         <h3>大工 #{index+1}</h3>
-                        <div>
+                        <div
+                            style={{
+                                borderBottom: "1px solid #999",
+                            }}
+                        >
                             {workerTask.tasks.map((task) => (
                                 <div key={`worker_task-${task.name}-${task.unitId}-${task.unitStepId}`}>
                                     {task.nameTranslated}(#{task.unitId}-{task.unitStepId})
@@ -115,7 +119,9 @@ export const ReminingWorkSuummary = ({
                                     {task.cost.timeHours}h
                                 </div>
                             ))}
-                            合計: {workerTask.workEndTime}h
+                        </div>
+                        <div>
+                            <strong>合計: {workerTask.workEndTime}h</strong>
                         </div>
                     </div>
                 ))}

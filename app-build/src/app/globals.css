@@ -16,6 +16,13 @@ main h2 {
     margin-top: 50px;
     margin-bottom: 20px;
 }
+main h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    background-color: #b5b9ab;
+    margin-top: 30px;
+    padding: 2px 0 2px 10px;
+}
 main {
     margin-bottom: 200px;
 }
