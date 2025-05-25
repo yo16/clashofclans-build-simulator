@@ -12,6 +12,14 @@ import { bombTowerCosts, bombTowerNumberAvailable } from "./buidings/defensiveBu
 import { infernoTowerCosts, infernoTowerNumberAvailable } from "./buidings/defensiveBuildings/infernoTower";
 import { eagleArtilleryCosts, eagleArtilleryNumberAvailable } from "./buidings/defensiveBuildings/eagleArtillery";
 import { scattershotCosts, scattershotNumberAvailable } from "./buidings/defensiveBuildings/scattershot";
+import { buildersHutCosts, buildersHutNumberAvailable } from "./buidings/defensiveBuildings/buildersHut";
+import { spellTowerCosts, spellTowerNumberAvailable } from "./buidings/defensiveBuildings/spellTower";
+import { monolithCosts, monolithNumberAvailable } from "./buidings/defensiveBuildings/monolith";
+import { multiArcherTowerCosts, multiArcherTowerNumberAvailable } from "./buidings/defensiveBuildings/multiArcherTower";
+import { ricochetCannonCosts, ricochetCannonNumberAvailable } from "./buidings/defensiveBuildings/ricochetCannon";
+import { multiGearTowerCosts, multiGearTowerNumberAvailable } from "./buidings/defensiveBuildings/multiGearTower";
+import { firespitterCosts, firespitterNumberAvailable } from "./buidings/defensiveBuildings/firespitter";
+
 import { townhallCosts, townhallNumberAvailable } from "./buidings/resourceBuildings/townhall";
 import { bombCosts, bombNumberAvailable } from "./buidings/traps/bomb";
 import { springTrapCosts, springTrapNumberAvailable } from "./buidings/traps/springTrap";
@@ -35,6 +43,13 @@ export const buildingCosts: Record<string, BuildingCost[]> = {
     infernoTower: infernoTowerCosts,
     eagleArtillery: eagleArtilleryCosts,
     scattershot: scattershotCosts,
+    buildersHut: buildersHutCosts,
+    spellTower: spellTowerCosts,
+    monolith: monolithCosts,
+    multiArcherTower: multiArcherTowerCosts,
+    ricochetCannon: ricochetCannonCosts,
+    multiGearTower: multiGearTowerCosts,
+    firespitter: firespitterCosts,
 
     /* resourceBuildings */
     townhall: townhallCosts,
@@ -63,6 +78,13 @@ export const buildingNumberAvailable: Record<string, THNumberAvailable[]> = {
     infernoTower: infernoTowerNumberAvailable,
     eagleArtillery: eagleArtilleryNumberAvailable,
     scattershot: scattershotNumberAvailable,
+    buildersHut: buildersHutNumberAvailable,
+    spellTower: spellTowerNumberAvailable,
+    monolith: monolithNumberAvailable,
+    multiArcherTower: multiArcherTowerNumberAvailable,
+    ricochetCannon: ricochetCannonNumberAvailable,
+    multiGearTower: multiGearTowerNumberAvailable,
+    firespitter: firespitterNumberAvailable,
 
     /* resourceBuildings */
     townhall: townhallNumberAvailable,
